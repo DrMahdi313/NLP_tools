@@ -1,6 +1,6 @@
 
-# NLP Toolkit
-This repository contains an NLP data augmentation pipeline using BERT and WordNet.
+# Text Data Augmentation
+This repository contains an text data augmentation pipeline using BERT and WordNet.
 
 ## Features
 - Replace words with contextually relevant synonyms using BERT.
