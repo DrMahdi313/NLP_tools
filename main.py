@@ -8,7 +8,7 @@ import random
 bert_mask_filler = pipeline("fill-mask", model="bert-base-uncased")
 
 # Load stopwords
-stopwords_set = set(stopwords.words('english'))
+stopwords_set = set(stopwords.words('english') + list(string.punctuation) + ["''", "``"])
 
 def filter_synonyms_with_bert(sentence, masked_word, synonyms):
     """
