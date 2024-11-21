@@ -36,7 +36,10 @@ def filter_synonyms_with_bert(sentence, masked_word, synonyms):
         scored_synonyms.append((pred['token_str'], pred['score']))
     
     print(f'Scored synonyms by BERT (un-normalized): {scored_synonyms}\n')
-
+    
+    if not scored_synonyms:
+        return []
+    
     # Sort synonyms by score in descending order
     scored_synonyms.sort(key=lambda x: x[1], reverse=True)
     values = [x[1] for x in scored_synonyms]
