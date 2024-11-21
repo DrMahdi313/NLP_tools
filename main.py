@@ -105,7 +105,11 @@ def replace_with_synonym(sentence, top_k=5, threshold=0.9):
     # Filter synonyms with BERT
     scored_synonyms = filter_synonyms_with_bert(sentence, random_word, synonyms)
     print(f'Scored synonyms by BERT: {scored_synonyms}\n')
-    
+
+    # If no synonyms scored by BERT, return an empty list
+    if not scored_synonyms:
+        return []
+        
     # Select final synonyms based on threshold
     final_synonyms = [syn for syn, score in scored_synonyms if score >= threshold]
 
